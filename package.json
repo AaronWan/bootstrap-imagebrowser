@@ -1,0 +1,31 @@
+{
+  "name": "ImagePreview",
+  "version": "1.0.0",
+  "description": "bootstrap插件 用来在一个input type=file上展示当前选择的图片",
+  "main": "dist/ImagePreview.js",
+  "scripts": {
+    "test": "grunt dist --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AaronWan/bootstrap-imagebrowser.git"
+  },
+  "keywords": [
+    "image",
+    "browser",
+    "fileupload",
+    "bootstrap"
+  ],
+  "author": "wansong",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/AaronWan/bootstrap-imagebrowser./issues"
+  },
+  "homepage": "https://github.com/AaronWan/bootstrap-imagebrowser",
+  "devDependencies": {
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.7.0"
+  }
+}

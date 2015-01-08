@@ -4,7 +4,7 @@ bootstrap-imagebrowser
 ###bootstrap插件  用来在一个input type=file上展示当前选择的图片
 
 ###引入：
-```
+```html
 <!-- 新 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
 
@@ -25,8 +25,6 @@ bootstrap-imagebrowser
 
 
 ###使用方法：
-```
+```html
 <input  type="file" data-ride="imagebrowser" data-maxsize="1.5" accept="image/gif, image/jpeg">
 ```
-###事例
-<p>Use the <code>printf()</code> function.</p>

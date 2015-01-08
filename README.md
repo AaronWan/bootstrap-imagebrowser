@@ -14,5 +14,5 @@ bootstrap-imagebrowser
 
 ###使用方法：
 ```
-<input  type="file" data-ride="filebrowser" accept="image/gif, image/jpeg">
+<input  type="file" data-ride="imagebrowser" accept="image/gif, image/jpeg">
 ```

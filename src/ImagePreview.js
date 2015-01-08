@@ -63,6 +63,8 @@
                     'filter': fn,
                     display: 'block'
                 });
+
+                out.addClass("img-thumbnail");
                 callback(out);
                 imgitem.remove();
             }
@@ -88,6 +90,7 @@
                     imgHeight: img.naturalHeight
                 });
                 var out = $(img).css(zoom);
+                out.addClass("img-thumbnail");
                 callback(out);
             };
         });
@@ -131,12 +134,9 @@
     ImagePreview.prototype.selected = function(e){
         var fileinput = this.$element;
         var self=this;
-        fileinput.filters(function(e){
-            console.info(e);
-        });
-        if (fileinput&& fileinput.files.length == 1) {
+        if (fileinput&&(!fileinput.files || fileinput.files.length == 1)) {
             this.$imgcollection.hide();
-            var size = fileinput.files[0].size / (1024.0 * 1024);
+            var size = !fileinput.files?1:fileinput.files[0].size / (1024.0 * 1024);
             if(self.validate(size)){
                 this.$error.hide();
                 this.preview( function ($obj) {
@@ -148,14 +148,22 @@
         }
     }
     /**
-     * 验证图片的大小及格式
+     * 验证图片的大小
      */
     ImagePreview.prototype.validate = function (size) {
         if (size >ImagePreview.DEFAULTS.max_size) {
-            this.$error.html(size.toFixed(2) + ">" + max_size + "M,请选择小于"+ImagePreview.DEFAULTS.max_size+"的图片");
-            this.$error.show();
+            var temp = $('<input name="cover" type="file" data-ride="filebrowser" accept="image/gif, image/jpeg,image/png">');
+            $(this.$element).before(temp);
+            this.$element.remove();
+            this.$imgcollection.remove();
+            this.$error.remove();
+            $.fn.imagepreview.call(temp, temp.data());
+            var data=temp.data("bs.preview");
+            data.$error.html(size.toFixed(2) + ">" + ImagePreview.DEFAULTS.max_size + "M,请选择小于"+ImagePreview.DEFAULTS.max_size+"M的图片");
+            data.$error.show();
             return false;
         }else{
+            this.$error.hide();
             return true;
         }
     }
@@ -191,7 +199,7 @@
     }
 
     $(window).on('load', function () {
-        $('[data-ride="filebrowser"]').each(function () {
+        $('[data-ride="imagebrowser"]').each(function () {
             //需要优化  目前只针对一个
             var $fileinput = $(this);
             $.fn.imagepreview.call($fileinput, $fileinput.data());

@@ -5,11 +5,16 @@ bootstrap-imagebrowser
 
 ###引入：
 ```
-<script type="application/javascript" src="../bootstrap/js/jquery-1.11.1.min.js"></script>
-<script type="application/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-<script type="application/javascript" src="../bootstrap/js/html5.js"></script>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<!--引入图片浏览插件-->
 <script type="application/javascript" src="../dist/ImagePreview.js"></script>
-<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" >
 ```
 
 ###使用方法：

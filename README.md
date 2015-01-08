@@ -28,3 +28,5 @@ bootstrap-imagebrowser
 ```
 <input  type="file" data-ride="imagebrowser" data-maxsize="1.5" accept="image/gif, image/jpeg">
 ```
+###事例
+<p>Use the <code>printf()</code> function.</p>

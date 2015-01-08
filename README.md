@@ -13,6 +13,7 @@ bootstrap-imagebrowser
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
 <!--引入图片浏览插件-->
 <script type="application/javascript" src="../dist/ImagePreview.js"></script>
 ```
